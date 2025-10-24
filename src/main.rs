@@ -21,7 +21,7 @@ async fn search(req: web::Json<SearchRequest>) -> impl Responder {
 
     let body = serde_json::json!({
         "messages": [
-            {"content": format!("你是一个中国境内景点图片搜索引擎，返回景点{}的图片URL。", req.query),
+            {"content": format!("{}", req.query),
              "role": "user"}
         ],
         "search_source": "baidu_search_v2",
